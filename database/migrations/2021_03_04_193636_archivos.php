@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Contenido extends Migration
+class Archivos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Contenido extends Migration
      */
     public function up()
     {
-        Schema::create('contenido', function (Blueprint $table) {
+        Schema::create('archivos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('description')->unique();

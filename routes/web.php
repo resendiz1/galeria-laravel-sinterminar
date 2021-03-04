@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\galeriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,6 @@ Route::get('/', function () {
 
 
 Route::view('detalles', 'detalles')->name('detalles');
+Route::get('agregar',[galeriaController::class, 'create'])->name('galeria.create');
+Route::post('agregar', [galeriaController::class, 'store'])->name('galeria.store');
+
