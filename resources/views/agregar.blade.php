@@ -18,8 +18,10 @@
                     @csrf
                     <div class="form-group">
                       <label class="form-label mb-2" for="nombre">Nombre</label>
-                      <input type="text" class="form-control mb-3" name="nombre" data-mdb-showcounter="true" maxlength="15" name="" id="nombre">
+                      <input type="text" class="form-control mb-3" value="{{old('nombre')}}" name="nombre" data-mdb-showcounter="true" maxlength="15" name="" id="nombre"> 
+                      {!! $errors->first('nombre','<div class="alert alert-danger p-1">:message</div>') !!}
                     </div>
+                    <br>
                     <div class="form-outline my-3">
                         <input
                           type="text"
@@ -28,13 +30,19 @@
                           data-mdb-showcounter="true"
                           maxlength="20"
                           name="descripcion"
+                          value="{{old('descripcion')}}"
                         />
                         <label class="form-label" for="form1">Descripción</label>
                         <div class="form-helper"></div>
-                      </div>
+                      </div> 
+                      {!! $errors->first('descripcion','<div class="alert alert-danger p-1">:message</div>') !!}
+                      <br>
                     <div class="form-group">
                       <label for="" class="form-label mb-2">Sube tu imagen o video aqui</label>
-                      <input type="file" class="form-control mb-3" name="archivo">
+                      <input type="file" class="form-control mb-3" name="archivo"> 
+                      {!! $errors->first('archivo','<div class="alert alert-danger p-1">:message</div>') !!}
+                      <br>
+
                     </div>
                     <div class="form-group">
                         <button class="btn btn-success btn-block" type="submit">Agregar</button>
