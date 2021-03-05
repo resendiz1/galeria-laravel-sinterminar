@@ -45,7 +45,7 @@
 
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-success btn-block" type="submit">Agregar</button>
+                        <button class="btn btn-success btn-block " type="submit">Agregar</button>
                     </div>
                   </form>
             </div>
