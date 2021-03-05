@@ -16,7 +16,7 @@ class Archivos extends Migration
         Schema::create('archivos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description')->unique();
+            $table->string('description');
             $table->string('multimedia');
             $table->rememberToken();
             $table->timestamps();

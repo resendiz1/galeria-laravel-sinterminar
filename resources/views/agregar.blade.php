@@ -14,7 +14,7 @@
                 <h2 class="text-white">Agregar contenido</h2>
             </div>
             <div class="col-8 shadow p-3">
-                <form action="{{route('galeria.store')}}" method="POST">
+                <form action="{{route('galeria.store')}}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="form-group">
                       <label class="form-label mb-2" for="nombre">Nombre</label>
