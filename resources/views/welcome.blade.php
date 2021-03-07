@@ -31,7 +31,7 @@
     <div class="col-8 p-2">
       <h3>{{$datosItem->name}}</h3>
       <p>{{$datosItem->description}}</p>
-       <a href="{{route('detalles')}}" contenteditable="false" class="btn btn-success btn-block btn-sm">Visitar</a>
+       <a href="{{route('galeria.show', $datosItem)}}" contenteditable="false" class="btn btn-success btn-block btn-sm">Visitar</a>
     </div>
   </div>
 </div>

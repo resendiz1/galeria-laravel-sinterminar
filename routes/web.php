@@ -14,12 +14,9 @@ use App\Http\Controllers\galeriaController;
 |
 */
 
-
+Route::get('detalles/{id}/', [galeriaController::class, 'show'])->name('galeria.show');
 
 Route::get('/', [galeriaController::class, 'index'])->name('home');
-
-
-Route::view('detalles', 'detalles')->name('detalles');
 Route::get('agregar',[galeriaController::class, 'create'])->name('galeria.create');
 Route::post('agregar', [galeriaController::class, 'store'])->name('galeria.store');
 

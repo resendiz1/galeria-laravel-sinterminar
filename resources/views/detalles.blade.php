@@ -3,7 +3,7 @@
 @section('contenido')
 <div class="row mb-5">
     <div class="col-12 text-center bg-danger mt-3 text-white rounded">
-      <h2>Nombre</h2>
+      <h2>{{$datos->name}}</h2>
     </div>
   </div> 
   
@@ -12,10 +12,11 @@
         <a href="{{route('home')}}" class="btn btn-dark btn-sm"> <i class="fa fa-home mx-1"></i> Regresar</a>
       </div>
     <div class="col-8">
-      <img src="img/messi.jpg" alt="">
+      <img src="{{Storage::url($datos->multimedia)}}" class="img-fluid" alt="">
     </div>
     <div class="col-4">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, illum! Iusto debitis nemo architecto deleniti ullam molestiae possimus a sed, minus voluptatem minima beatae dolor ipsum obcaecati. Accusantium, excepturi quia.
-    </div>
+{{
+  $datos->description
+}}    </div>
   </div>
 @endsection

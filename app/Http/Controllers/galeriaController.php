@@ -42,4 +42,11 @@ class galeriaController extends Controller
 
         return view('welcome', compact('datos'));
     }
+    
+
+    public function show($id){
+        $datos = Archivo::find($id);
+
+        return view('detalles', compact('datos'));
+    }
 }
