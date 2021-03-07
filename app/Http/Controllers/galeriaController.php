@@ -49,4 +49,39 @@ class galeriaController extends Controller
 
         return view('detalles', compact('datos'));
     }
+
+    public function destroy($id){
+
+        if(Archivo::destroy($id)){
+            return redirect()->route('home')->with('mensajeg', 'Elemento borrado');
+        }
+        else{
+            return redirect()->route('home')->with('mensajeb', 'No se borro el elemento');
+        }
+    }
+
+
+    public function edit(Archivo $id){
+        return view('editar', compact('id'));
+    }
+
+    public function update(Archivo $elemento){
+
+       request()->validate([
+           'nombre' =>'required',
+           'descripcion' => 'required',
+           'archivo' => 'required'
+       ]);
+
+       $ruta = request()->file('archivo')->store('public');
+       $nueva_ruta = substr($ruta, -45);
+
+       $elemento-> update([
+           'name' => request('nombre'),
+           'description' => request('descripcion'),
+           'multimedia' => $nueva_ruta
+       ]);
+
+       return redirect()->route('home')->with('editado', 'Elemento editado');
+    }
 }

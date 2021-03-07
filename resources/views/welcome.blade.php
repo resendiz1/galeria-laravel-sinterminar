@@ -7,7 +7,22 @@
   <div class="col-12">
     @if (session('mensaje'))
         <div class="alert alert-success">
-          Elemento agregado
+         {{session('mensaje')}}
+        </div>
+    @endif
+    @if (session('mensajeb'))
+        <div class="alert alert-danger">
+          {{session('mensajeb')}}
+        </div>
+    @endif
+    @if (session('mensajeg'))
+     <div class="alert alert-success">
+       {{session('mensajeg')}}
+     </div>
+    @endif
+    @if (session('editado'))
+        <div class="alert alert-success">
+          {{session('editado')}}
         </div>
     @endif
   </div>
